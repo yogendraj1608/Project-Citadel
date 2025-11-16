@@ -1,0 +1,8 @@
+elasticsearch==8.15.1
+pandas==2.2.2
+numpy==1.26.4
+scikit-learn==1.5.2
+streamlit==1.49.1
+geopy==2.4.1
+pytz==2024.2
+matplotlib==3.9.2

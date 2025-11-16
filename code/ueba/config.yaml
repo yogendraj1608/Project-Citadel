@@ -1,0 +1,44 @@
+elasticsearch:
+  url: "https://40.81.225.56:9200"
+  username: "${ES_USER}"
+  password: "${ES_PASS}"
+  index: "logs-system.auth-*"
+  history_days: 30
+  page_size: 10000
+
+features:
+  timezone: "Asia/Kolkata"
+  work_hours_start: 8
+  work_hours_end: 20
+  min_events_per_user: 30
+  distance_clip_km: 10000
+  fail_ratio_window_events: 200
+
+model:
+  algorithm: "isolation_forest"
+  contamination: 0.03
+  n_estimators: 200
+  random_state: 42
+
+scoring:
+  threshold_medium: 0.70
+  threshold_high: 0.85
+  threshold_critical: 0.95
+  escalate_if:
+    off_hours: true
+    country_changed: true
+    min_score_for_escalation: 0.90
+
+streamlit:
+  recent_hours: 12
+  default_severities: ["critical","high"]
+  table_limit: 100
+
+alerts:
+  enabled: false
+  smtp_host: "${SMTP_HOST}"
+  smtp_port: 465
+  smtp_user: "${SMTP_USER}"
+  smtp_pass: "${SMTP_PASS}"
+  to: ["soc@example.com"]
+  rate_limit_per_user_per_hour: 1
