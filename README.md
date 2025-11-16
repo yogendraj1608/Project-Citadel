@@ -112,4 +112,4 @@ Each subsystem operates as an independent, secure service layer—interconnected
 ---
 
 
-License: MIT  
+
