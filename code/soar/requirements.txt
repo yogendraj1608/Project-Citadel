@@ -1,0 +1,5 @@
+fastapi
+uvicorn
+elasticsearch~=8.0
+boto3
+pydantic>=2
